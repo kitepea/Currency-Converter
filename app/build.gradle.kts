@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dagger.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -38,6 +39,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    kapt {
+        correctErrorTypes = true
     }
 }
 
