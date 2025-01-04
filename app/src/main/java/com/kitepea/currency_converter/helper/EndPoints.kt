@@ -7,8 +7,5 @@ class EndPoints {
 
         const val BASE_URL = "https://api.getgeoapi.com/api/v2/currency/"
         const val API_KEY = BuildConfig.API_KEY
-
-        // Convert URL
-        const val CONVERT_URL = "convert"
     }
 }
