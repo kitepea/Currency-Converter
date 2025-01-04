@@ -5,15 +5,198 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".view.MainActivity">
 
     <TextView
+        android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/currency_converter"
+        android:textColor="@color/main_blue"
+        android:textSize="35sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/exchangeGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!-- Group "From" -->
+
+        <TextView
+            android:id="@+id/txtFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="@string/from"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spnFirstCountry"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/from_currency"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/light_grey"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtFrom" />
+
+        <!-- Group "To" -->
+        <TextView
+            android:id="@+id/txtTo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/to"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spnSecondCountry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/light_grey"
+            android:contentDescription="@string/to_currency"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/txtTo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/inputGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/exchangeGroup">
+
+        <EditText
+            android:id="@+id/etFirstCurrency"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="4"
+            android:background="@drawable/edit_text_input_with_border_2"
+            android:ellipsize="start"
+            android:hint="@string/amount"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:paddingHorizontal="20dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/txtFirstCurrencyName"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:layout_constraintTop_toBottomOf="@+id/exchangeGroup" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/outputGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/inputGroup">
+
+        <EditText
+            android:id="@+id/etSecondCurrency"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text_input_with_border_2"
+            android:enabled="false"
+            android:hint="@string/converted_amount"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:layout_marginEnd="10dp"
+            android:paddingHorizontal="20dp"
+            android:textSize="16sp"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:layout_weight="1"
+            android:height="50dp"
+            android:id="@+id/txtSecondCurrencyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_main_round"
+        android:text="@string/convert"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputGroup"
+        app:layout_constraintVertical_bias="0.123" />
+
+    <ProgressBar
+        android:id="@+id/prgLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConvert"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
