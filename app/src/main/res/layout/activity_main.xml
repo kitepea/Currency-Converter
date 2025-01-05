@@ -56,8 +56,6 @@
         <com.jaredrummler.materialspinner.MaterialSpinner
             android:id="@+id/spnFirstCountry"
             android:text="Hello"
-            app:ms_padding_top="0dp"
-            app:ms_padding_bottom="0dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -89,8 +87,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            app:ms_padding_top="0dp"
-            app:ms_padding_bottom="0dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:backgroundTint="@color/light_grey"
