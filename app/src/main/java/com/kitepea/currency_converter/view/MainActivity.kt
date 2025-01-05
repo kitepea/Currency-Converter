@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initSpinner() {
+        binding.txtFirstCurrencyName.text = selectedItem1
+        binding.txtSecondCurrencyName.text = selectedItem2
+
         val spinner1 = binding.spnFirstCountry
 
         // Set item with countries
@@ -126,8 +129,6 @@ class MainActivity : AppCompatActivity() {
     private fun convertButtonClickListener() {
 
         binding.btnConvert.setOnClickListener {
-
-
             val numberToConvert = binding.etFirstCurrency.text.toString()
 
             // Internet Connection
@@ -195,9 +196,7 @@ class MainActivity : AppCompatActivity() {
                         val map: Map<String, Rates>
                         map = result.data.rates
                         map.keys.forEach {
-
                             val rateForAmount = map[it]?.rate_for_amount
-
                             mainViewModel.convertedRate.value = rateForAmount
 
                             //format the result obtained e.g 1000 = 1,000
