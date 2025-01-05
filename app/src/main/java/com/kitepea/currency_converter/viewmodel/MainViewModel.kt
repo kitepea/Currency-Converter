@@ -9,9 +9,10 @@ import com.kitepea.currency_converter.model.ApiResponse
 import com.kitepea.currency_converter.model.Rates
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel constructor(private val mainRepo: MainRepository) :
+class MainViewModel @Inject constructor(private val mainRepo: MainRepository) :
     ViewModel() {
 
     // Cached

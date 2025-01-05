@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/currency_converter"
-        android:textColor="@color/main_blue"
+        android:textColor="@color/main_green"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,8 +124,10 @@
 
         <TextView
             android:id="@+id/txtFirstCurrencyName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:textSize="22.5sp"
+            android:gravity="center"
             android:layout_weight="1"
             app:layout_constraintTop_toBottomOf="@+id/exchangeGroup" />
     </LinearLayout>
@@ -157,10 +159,11 @@
 
         <TextView
             android:layout_weight="1"
-            android:height="50dp"
             android:id="@+id/txtSecondCurrencyName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="22.5sp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="50dp" />
 
     </LinearLayout>
 
@@ -191,12 +194,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnConvert"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
