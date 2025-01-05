@@ -2,9 +2,9 @@ package com.kitepea.currency_converter.model
 
 data class ApiResponse(
     val amount: String,
-    val baseCurrencyCode: String,
-    val baseCurrencyName: String,
+    val base_currency_code: String,
+    val base_currency_name: String,
     var rates: HashMap<String, Rates> = HashMap(),
     val status: String,
-    val updatedDate: String
+    val updated_date: String
 )
