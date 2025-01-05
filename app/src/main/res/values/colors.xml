@@ -6,7 +6,8 @@
 
     <!--Main colors-->
     <color name="main_blue">#1681ff</color>
-    <color name="main_green">#00d998</color>
+    <color name="main_green">#4cad50</color>
+    <color name="main_purple">#7885ff</color>
     <color name="dark_blue">#0063d7</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
