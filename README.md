@@ -1,6 +1,47 @@
 ## App Overview
-The Currency Converter app allows users to convert amounts between different currencies. The app uses a ViewModel to manage data and perform network operations, and it observes changes in the data to update the UI accordingly.
+The Currency Converter app allows users to convert amounts between different currencies. 
 
+Utilized: MVVM architecture, Retrofit, LiveData, Coroutines, Flow, Dagger Hilt.
+## Architecture Overview
+
+### 1. Model (model)
+- **Data Classes**: Represent the data structure of the API responses.
+  - `ApiResponse`
+  - `Rates`
+
+### 2. View (view)
+- **Activities**: Handle the UI and user interactions.
+  - `MainActivity`
+- **XML Layouts**: Define the UI components.
+  - `activity_main.xml`
+
+### 3. ViewModel (viewmodel)
+- **ViewModel**: Manages UI-related data and handles business logic.
+  - `MainViewModel`
+- **Repository**: Acts as a single source of truth for data.
+  - `MainRepository`
+
+### 4. Network (network)
+- **API Service**: Defines the API endpoints.
+  - `ApiService`
+- **Data Source**: Handles API calls and data fetching.
+  - `ApiDataSource`
+  - `BaseDataSource`
+
+### 5. Dependency Injection (di)
+- **Dagger Hilt**: Manages dependency injection.
+  - `AppModule`
+  - `MyApplication`
+
+### 6. Helpers
+- **Utility Classes**: Provide common functionalities.
+  - `EndPoints`
+  - `Resource`
+  - `SingleLiveEvent`
+  - `Utility`
+
+## Challenges encountered
+- Learning how to properly set up for the DI, Coroutines and Flow.
 ## Steps to Build and Run
 1. **Clone the Repository:**
     ```sh
@@ -23,5 +64,7 @@ The Currency Converter app allows users to convert amounts between different cur
     - Connect an Android device or start an emulator.
     - Click on the **Run** button (green play icon) in the toolbar.
     - Select the target device and click **OK**.
+
+## App Demo
 
 Current device: Pixel 9 API 33

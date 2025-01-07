@@ -134,11 +134,12 @@ class MainActivity : AppCompatActivity() {
                 ).setBackgroundTint(ContextCompat.getColor(this, R.color.dark_red))
                     .setTextColor(ContextCompat.getColor(this, R.color.white)).show()
             }
-            // Empty input
-            else if (numberToConvert.isEmpty() || numberToConvert == "0") {
+            // Invalid
+            else if (numberToConvert.isEmpty() || numberToConvert == "0" || numberToConvert == "0." || numberToConvert == ".") {
+                Utility.hideKeyboard(this)
                 Snackbar.make(
                     binding.main,
-                    "Input a value in the first text field, result will be shown in the second text field",
+                    "Invalid input! Please enter a valid number greater than 0",
                     Snackbar.LENGTH_LONG
                 ).setBackgroundTint(ContextCompat.getColor(this, R.color.dark_red))
                     .setTextColor(ContextCompat.getColor(this, R.color.white)).show()
