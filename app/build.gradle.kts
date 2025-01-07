@@ -71,6 +71,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.junit)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -106,4 +107,10 @@ dependencies {
     // Hilt for Dependency Injection
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+
+    // Testing
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    androidTestImplementation(libs.mockito.android)
+    testImplementation(libs.kotlinx.coroutines.test)
 }

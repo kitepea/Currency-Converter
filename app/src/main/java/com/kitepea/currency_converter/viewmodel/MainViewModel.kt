@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.kitepea.currency_converter.helper.Resource
 import com.kitepea.currency_converter.helper.SingleLiveEvent
 import com.kitepea.currency_converter.model.ApiResponse
+import com.kitepea.currency_converter.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

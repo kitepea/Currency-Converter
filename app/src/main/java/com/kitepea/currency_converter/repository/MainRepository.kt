@@ -1,4 +1,4 @@
-package com.kitepea.currency_converter.viewmodel
+package com.kitepea.currency_converter.repository
 
 import com.kitepea.currency_converter.helper.Resource
 import com.kitepea.currency_converter.model.ApiResponse

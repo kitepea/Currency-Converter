@@ -18,30 +18,36 @@ Utilized: MVVM architecture, Retrofit, LiveData, Coroutines, Flow, Dagger Hilt.
 ### 3. ViewModel (viewmodel)
 - **ViewModel**: Manages UI-related data and handles business logic.
   - `MainViewModel`
-- **Repository**: Acts as a single source of truth for data.
+
+### 4. Repository (repository)
+- **Repository**: Acts as a single source of truth for data, managing data operations and providing a clean API for data access.
   - `MainRepository`
 
-### 4. Network (network)
+### 5. Network (network)
 - **API Service**: Defines the API endpoints.
   - `ApiService`
 - **Data Source**: Handles API calls and data fetching.
   - `ApiDataSource`
   - `BaseDataSource`
 
-### 5. Dependency Injection (di)
+### 6. Dependency Injection (di)
 - **Dagger Hilt**: Manages dependency injection.
   - `AppModule`
   - `MyApplication`
 
-### 6. Helpers
+### 7. Helpers
 - **Utility Classes**: Provide common functionalities.
   - `EndPoints`
   - `Resource`
   - `SingleLiveEvent`
   - `Utility`
-
+  
+### 8. Unit Test (MainRepositoryTest.kt)
+- This unit test class, `MainRepositoryTest.kt`, tests the `getConvertedData` method of the `MainRepository` class to ensure it returns the correct conversion result.
+- Dependencies: Mockito, JUnit.
 ## Challenges encountered
 - Learning how to properly set up for the DI, Coroutines and Flow.
+- Learning unit testing
 ## Steps to Build and Run
 1. **Clone the Repository:**
     ```sh
