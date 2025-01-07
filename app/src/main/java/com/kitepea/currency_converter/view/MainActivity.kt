@@ -43,6 +43,20 @@ class MainActivity : AppCompatActivity() {
         convertButtonClickListener()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("selectedItem1", selectedItem1)
+        outState.putString("selectedItem2", selectedItem2)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        selectedItem1 = savedInstanceState.getString("selectedItem1")
+        selectedItem2 = savedInstanceState.getString("selectedItem2")
+        binding.txtFirstCurrencyName.text = selectedItem1
+        binding.txtSecondCurrencyName.text = selectedItem2
+    }
+
     private fun initSpinner() {
         binding.txtFirstCurrencyName.text = selectedItem1
         binding.txtSecondCurrencyName.text = selectedItem2
