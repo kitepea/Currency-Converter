@@ -2,6 +2,7 @@ package com.kitepea.currency_converter.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -122,12 +123,7 @@ class MainActivity : AppCompatActivity() {
         return countries
     }
 
-    /**
-     * A method for handling click events in the UI
-     */
-
     private fun convertButtonClickListener() {
-
         binding.btnConvert.setOnClickListener {
             val numberToConvert = binding.etFirstCurrency.text.toString()
 
@@ -154,11 +150,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * A method that does the conversion by communicating with the API - fixer.io based on the data inputted
-     * Uses viewModel and flows
-     */
-
     private fun doConversion() {
 
         //hide keyboard
@@ -184,9 +175,7 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Using coroutines flow, changes are observed and responses gotten from the API
-     *
      */
-
     @SuppressLint("SetTextI18n")
     private fun observeUi() {
         mainViewModel.data.observe(this) { result ->
@@ -195,6 +184,7 @@ class MainActivity : AppCompatActivity() {
                     if (result.data?.status == "success") {
                         val map: Map<String, Rates>
                         map = result.data.rates
+                        Log.d("kite-pea-log", map.toString())
                         map.keys.forEach {
                             val rateForAmount = map[it]?.rate_for_amount
                             mainViewModel.convertedRate.value = rateForAmount

@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.kitepea.currency_converter.helper.Resource
 import com.kitepea.currency_converter.helper.SingleLiveEvent
 import com.kitepea.currency_converter.model.ApiResponse
-import com.kitepea.currency_converter.model.Rates
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,11 +14,8 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val mainRepo: MainRepository) :
     ViewModel() {
 
-    // Cached
     private val _data = SingleLiveEvent<Resource<ApiResponse>>()
-    private val rates = MutableLiveData<HashMap<String, Rates>>()
 
-    // Public
     val data = _data
     val convertedRate = MutableLiveData<Double>()
 

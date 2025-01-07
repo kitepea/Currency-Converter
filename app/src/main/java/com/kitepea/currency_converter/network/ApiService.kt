@@ -6,7 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-
     @GET("convert")
     suspend fun convertCurrencyCall(
         @Query("api_key") accessKey: String,
@@ -14,5 +13,4 @@ interface ApiService {
         @Query("to") to: String,
         @Query("amount") amount: Double
     ): Response<ApiResponse>
-
 }
