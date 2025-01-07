@@ -66,6 +66,6 @@ Utilized: MVVM architecture, Retrofit, LiveData, Coroutines, Flow, Dagger Hilt.
     - Select the target device and click **OK**.
 
 ## App Demo
-https://github.com/user-attachments/assets/0daca3ca-96dd-4da5-bfb7-35f723e6ce25
+https://github.com/user-attachments/assets/eb3a62c9-c5d0-4db6-8f83-87b87190339f
 
 Current device: Pixel 9 API 33
